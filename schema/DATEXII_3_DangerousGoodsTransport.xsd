@@ -161,7 +161,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="Address" abstract="true">
+  <xs:complexType name="Address">
     <xs:sequence>
       <xs:element name="name" type="com:String" minOccurs="1" maxOccurs="1" />
       <xs:element name="pOBox" type="com:String" minOccurs="0" maxOccurs="1" />
@@ -463,25 +463,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DGAccompanyingInformation">
-    <xs:complexContent>
-      <xs:extension base="com:PayloadPublication">
-        <xs:sequence>
-          <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="dangerousGoodsQuantities" type="dgt:DangerousGoodsQuantities" minOccurs="0" />
-          <xs:element name="exceptedQuantities" type="dgt:ExceptedQuantities" minOccurs="0" />
-          <xs:element name="exceptedPackagesClass7" type="dgt:ExceptedPackagesClass7" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="coolingSubstances" type="dgt:CoolingSubstances" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="meansOfIdentification" type="dgt:MeansOfIdentification" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="testReportForPackaging" type="dgt:TestReportForPackaging" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="expertTrainingCertificate" type="dgt:ExpertTrainingCertificate" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="instructionsInWriting" type="dgt:InstructionsInWriting" />
-          <xs:element name="unitFumigation" type="dgt:UnitFumigation" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="certificateOfApproval" type="dgt:CertificateOfApproval" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="tankCertificate" type="dgt:TankCertificate" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="_dgAccompanyingInformationExtension" type="com:_ExtensionType" minOccurs="0" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence>
+      <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dangerousGoodsQuantities" type="dgt:DangerousGoodsQuantities" minOccurs="0" />
+      <xs:element name="exceptedQuantities" type="dgt:ExceptedQuantities" minOccurs="0" />
+      <xs:element name="exceptedPackagesClass7" type="dgt:ExceptedPackagesClass7" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="coolingSubstances" type="dgt:CoolingSubstances" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="meansOfIdentification" type="dgt:MeansOfIdentification" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="testReportForPackaging" type="dgt:TestReportForPackaging" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="expertTrainingCertificate" type="dgt:ExpertTrainingCertificate" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="instructionsInWriting" type="dgt:InstructionsInWriting" />
+      <xs:element name="unitFumigation" type="dgt:UnitFumigation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="certificateOfApproval" type="dgt:CertificateOfApproval" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="tankCertificate" type="dgt:TankCertificate" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgAccompanyingInformationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DGBulkContainerApproval">
     <xs:sequence>
@@ -684,6 +680,7 @@
       <xs:extension base="com:PayloadPublication">
         <xs:sequence>
           <xs:element name="signature" type="dgt:SignatureType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgTransport" type="dgt:DGTransport" />
           <xs:element name="_dgPublicationExtension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
@@ -776,21 +773,16 @@
     <xs:attribute name="id" type="xs:string" use="required" />
   </xs:complexType>
   <xs:complexType name="DGTransport">
-    <xs:complexContent>
-      <xs:extension base="com:PayloadPublication">
-        <xs:sequence>
-          <xs:element name="dateTimeOfSignature" type="com:DateTime" minOccurs="1" maxOccurs="1" />
-          <xs:element name="contains" type="dgt:DGAccompanyingInformation" minOccurs="0" />
-          <xs:element name="dgLoadInformationDynamic" type="dgt:DGLoadInformationDynamic" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="dgVehicleInformationDynamic" type="dgt:DGVehicleInformationDynamic" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="dgTransportUnit" type="dgt:DGTransportUnit" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="dgPublication" type="dgt:DGPublication" />
-          <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="_dgTransportExtension" type="com:_ExtensionType" minOccurs="0" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:string" use="required" />
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence>
+      <xs:element name="dateTimeOfSignature" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="contains" type="dgt:DGAccompanyingInformation" minOccurs="0" />
+      <xs:element name="dgLoadInformationDynamic" type="dgt:DGLoadInformationDynamic" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgVehicleInformationDynamic" type="dgt:DGVehicleInformationDynamic" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgTransportUnit" type="dgt:DGTransportUnit" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgTransportExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
   </xs:complexType>
   <xs:complexType name="DGTransportUnit">
     <xs:sequence>
