@@ -425,7 +425,7 @@
     </xs:sequence>
   </xs:complexType>
   <simpleType name="CryptoBinary" xmlns="http://www.w3.org/2001/XMLSchema">
-    <restriction base="base64Binary" />
+    <restriction base="xs:base64Binary" />
   </simpleType>
   <xs:simpleType name="DangerLabelEnum">
     <xs:restriction base="xs:string">
@@ -508,7 +508,7 @@
         <xs:sequence>
           <xs:element name="numberOfPackages" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
           <xs:element name="packageTypeDescription" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
-          <xs:element name="totalQuantitiyOfDG" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1" />
+          <xs:element name="totalQuantityOfDG" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1" />
           <xs:element name="unitTotalQuantityOfDG" type="dgt:_UnitDGQuantityEnum" minOccurs="0" maxOccurs="1" />
           <xs:element name="deliverySale" type="com:Boolean" minOccurs="1" maxOccurs="1" />
           <xs:element name="declaration" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
@@ -740,7 +740,7 @@
       <xs:element name="quantitiesPerShipment" type="dgt:QuantitiesPerShipment" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="dgtDocumentEntry" type="dgt:_DGTDocumentIndexDGTDocumentEntry" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="dgBulkContainerApproval" type="dgt:DGBulkContainerApproval" minOccurs="0" />
-      <xs:element name="dgConsignmentDescriptionOtherRegulations" type="dgt:DGConsignmentDescriptionOtherRegulations" maxOccurs="unbounded" />
+      <xs:element name="dgConsignmentDescriptionOtherRegulations" type="dgt:DGConsignmentDescriptionOtherRegulations" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="_dgtDocumentExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
     <xs:attribute name="id" type="xs:string" use="required" />
@@ -821,7 +821,7 @@
   </complexType>
   <element name="DigestValue" type="dgt:DigestValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <simpleType name="DigestValueType" xmlns="http://www.w3.org/2001/XMLSchema">
-    <restriction base="base64Binary" />
+    <restriction base="xs:base64Binary" />
   </simpleType>
   <element name="DSAKeyValue" type="dgt:DSAKeyValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <complexType name="DSAKeyValueType" xmlns="http://www.w3.org/2001/XMLSchema">
@@ -1000,7 +1000,7 @@
     </xs:sequence>
   </xs:complexType>
   <simpleType name="HMACOutputLengthType" xmlns="http://www.w3.org/2001/XMLSchema">
-    <restriction base="integer" />
+    <restriction base="xs:integer" />
   </simpleType>
   <xs:complexType name="InstructionsInWriting">
     <xs:sequence>
@@ -1022,7 +1022,7 @@
     </choice>
     <attribute name="Id" type="ID" use="optional" />
   </complexType>
-  <element name="KeyName" type="string" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element name="KeyName" type="xs:string" xmlns="http://www.w3.org/2001/XMLSchema" />
   <element name="KeyValue" type="dgt:KeyValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <complexType name="KeyValueType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
     <choice>
@@ -1084,7 +1084,7 @@
       <xs:element name="_meansOfIdentificationExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
-  <element name="MgmtData" type="string" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element name="MgmtData" type="xs:string" xmlns="http://www.w3.org/2001/XMLSchema" />
   <xs:complexType name="NonDG">
     <xs:complexContent>
       <xs:extension base="dgt:DGTDocumentEntry">
@@ -1105,7 +1105,7 @@
       <any namespace="##any" processContents="lax" />
     </sequence>
     <attribute name="Id" type="ID" use="optional" />
-    <attribute name="MimeType" type="string" use="optional" />
+    <attribute name="MimeType" type="xs:string" use="optional" />
     <attribute name="Encoding" type="anyURI" use="optional" />
   </complexType>
   <xs:simpleType name="PackageCategoryEnum">
@@ -1128,12 +1128,12 @@
   <complexType name="PGPDataType" xmlns="http://www.w3.org/2001/XMLSchema">
     <choice>
       <sequence>
-        <element name="PGPKeyID" type="base64Binary" />
-        <element name="PGPKeyPacket" type="base64Binary" minOccurs="0" />
+        <element name="PGPKeyID" type="xs:base64Binary" />
+        <element name="PGPKeyPacket" type="xs:base64Binary" minOccurs="0" />
         <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
       </sequence>
       <sequence>
-        <element name="PGPKeyPacket" type="base64Binary" />
+        <element name="PGPKeyPacket" type="xs:base64Binary" />
         <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
       </sequence>
     </choice>
@@ -1291,7 +1291,7 @@
   <element name="SignatureValue" type="dgt:SignatureValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <complexType name="SignatureValueType" xmlns="http://www.w3.org/2001/XMLSchema">
     <simpleContent>
-      <extension base="base64Binary">
+      <extension base="xs:base64Binary">
         <attribute name="Id" type="ID" use="optional" />
       </extension>
     </simpleContent>
@@ -1420,7 +1420,7 @@
   <element name="SPKIData" type="dgt:SPKIDataType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <complexType name="SPKIDataType" xmlns="http://www.w3.org/2001/XMLSchema">
     <sequence maxOccurs="unbounded">
-      <element name="SPKISexp" type="base64Binary" />
+      <element name="SPKISexp" type="xs:base64Binary" />
       <any namespace="##other" processContents="lax" minOccurs="0" />
     </sequence>
   </complexType>
@@ -1473,7 +1473,7 @@
   <complexType name="TransformType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
     <choice minOccurs="0" maxOccurs="unbounded">
       <any namespace="##other" processContents="lax" />
-      <element name="XPath" type="string" />
+      <element name="XPath" type="xs:string" />
     </choice>
     <attribute name="Algorithm" type="anyURI" use="required" />
   </complexType>
@@ -1623,18 +1623,18 @@
     <sequence maxOccurs="unbounded">
       <choice>
         <element name="X509IssuerSerial" type="dgt:X509IssuerSerialType" />
-        <element name="X509SKI" type="base64Binary" />
-        <element name="X509SubjectName" type="string" />
-        <element name="X509Certificate" type="base64Binary" />
-        <element name="X509CRL" type="base64Binary" />
+        <element name="X509SKI" type="xs:base64Binary" />
+        <element name="X509SubjectName" type="xs:string" />
+        <element name="X509Certificate" type="xs:base64Binary" />
+        <element name="X509CRL" type="xs:base64Binary" />
         <any namespace="##other" processContents="lax" />
       </choice>
     </sequence>
   </complexType>
   <complexType name="X509IssuerSerialType" xmlns="http://www.w3.org/2001/XMLSchema">
     <sequence>
-      <element name="X509IssuerName" type="string" />
-      <element name="X509SerialNumber" type="integer" />
+      <element name="X509IssuerName" type="xs:string" />
+      <element name="X509SerialNumber" type="xs:integer" />
     </sequence>
   </complexType>
 </xs:schema>
