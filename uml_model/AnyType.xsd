@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:D2LogicalModel="http://datex2.eu/schema/2/2_0" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://datex2.eu/schema/2/2_0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="Any">
+		<xs:complexContent>
+			<xs:extension base="xs:anyType" />
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

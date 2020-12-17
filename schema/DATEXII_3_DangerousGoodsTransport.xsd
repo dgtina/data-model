@@ -1,0 +1,1640 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:dgt="http://datex2.eu/schema/3/dangerousGoodsTransport" version="1.0" targetNamespace="http://datex2.eu/schema/3/dangerousGoodsTransport" xmlns:com="http://datex2.eu/schema/3/common" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://datex2.eu/schema/3/locationReferencing" schemaLocation="DATEXII_3_LocationReferencing.xsd" />
+  <xs:import namespace="http://datex2.eu/schema/3/common" schemaLocation="DATEXII_3_Common.xsd" />
+  <xs:complexType name="_ApprovalCertificateIDMarkEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:ApprovalCertificateIDMarkEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_BulkContainerTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:BulkContainerTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_CarriagetIAWEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:CarriagetIAWEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_Class1CompatibilityGroupEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:Class1CompatibilityGroupEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_Class1DivisionEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:Class1DivisionEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_DangerLabelEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:DangerLabelEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_DGTDocumentIndexDGTDocumentEntry">
+    <xs:sequence>
+      <xs:element name="dgtDocumentEntry" type="dgt:DGTDocumentEntry" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_DGTransportUnitIndexConnectingCarrier">
+    <xs:sequence>
+      <xs:element name="connectingCarrier" type="dgt:ConnectingCarrier" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="_EmptyPackagingTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:EmptyPackagingTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_EmptyUncleanedContainmentLargeTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:EmptyUncleanedContainmentLargeTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_EmptyUncleanedContainmentTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:EmptyUncleanedContainmentTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_EnvironmentallyHazardousSubstanceTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:EnvironmentallyHazardousSubstanceTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_LoadAlarmEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:LoadAlarmEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_LoadEventEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:LoadEventEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_PackageCategoryEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:PackageCategoryEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_PackingGroupEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:PackingGroupEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_PseudorangeUnitEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:PseudorangeUnitEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_SpecialProvision640Enum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:SpecialProvision640Enum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_TunnelRestrictionCodeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:TunnelRestrictionCodeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_UnitDGQuantityEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:UnitDGQuantityEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_VehicleAlarmEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:VehicleAlarmEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_VehicleEventEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:VehicleEventEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_WagonTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:WagonTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="name" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="pOBox" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="street" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="department" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="zipPostalCode" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="regionName" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="cityName" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="countryCode" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="countryName" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_addressExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AirConnectingCarrier">
+    <xs:complexContent>
+      <xs:extension base="dgt:ConnectingCarrier">
+        <xs:sequence>
+          <xs:element name="_airConnectingCarrierExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Any">
+    <xs:complexContent>
+      <xs:extension base="xs:anyType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ApprovalCertificateIDMark">
+    <xs:sequence>
+      <xs:element name="approvalCertificateIDMark" type="dgt:_ApprovalCertificateIDMarkEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_approvalCertificateIDMarkExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ApprovalCertificateIDMarkEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="specialFormRadioactiveMaterial" />
+      <xs:enumeration value="lowDispersibleRadioactiveMaterial" />
+      <xs:enumeration value="specialArrangement" />
+      <xs:enumeration value="packageDesign" />
+      <xs:enumeration value="shipment" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ApprovalClasses41And52">
+    <xs:sequence>
+      <xs:element name="approvalIAW2d2d52d1d8" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_approvalClasses41And52Extension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Barge">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTransportUnit">
+        <xs:sequence>
+          <xs:element name="bargeIdent" type="dgt:BargeIdentType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="container" type="dgt:Container" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_bargeExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="BargeIdentType">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="BICCodesType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Z][A-Z][A-Z][JUZ][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BulkContainerTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bctBK1" />
+      <xs:enumeration value="bctBK2" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Byte">
+    <xs:restriction base="xs:byte" />
+  </xs:simpleType>
+  <element name="CanonicalizationMethod" type="dgt:CanonicalizationMethodType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="CanonicalizationMethodType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <any namespace="##any" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Algorithm" type="anyURI" use="required" />
+  </complexType>
+  <xs:complexType name="CarriageIAW2x1x2x8">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_carriageIAW2x1x2x8Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CarriageIAW2x2x7x2x3x5">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_carriageIAW2x2x7x2x3x5Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CarriageIAW6x4x11x2">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_carriageIAW6x4x11x2Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CarriageIAW6x4x11x3">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_carriageIAW6x4x11x3Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CarriagetIAWEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ciaw1x1x4x2x1" />
+      <xs:enumeration value="ciaw4x1x2x2b" />
+      <xs:enumeration value="ciaw4x1x6x10" />
+      <xs:enumeration value="ciaw4x3x2x4x3" />
+      <xs:enumeration value="ciaw4x3x2x4x4" />
+      <xs:enumeration value="ciaw6x7x2x19x6b" />
+      <xs:enumeration value="ciaw6x7x3x15x6b" />
+      <xs:enumeration value="ciaw6x7x4x14x6b" />
+      <xs:enumeration value="ciaw7x5x8x1" />
+      <xs:enumeration value="ciaw2x2x52x1x8" />
+      <xs:enumeration value="ciaw2x2x52x1x9" />
+      <xs:enumeration value="ciaw4x3x2x3x7b" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Carrier">
+    <xs:sequence>
+      <xs:element name="address" type="dgt:Address" />
+      <xs:element name="carrierContact" type="dgt:CarrierContact" minOccurs="0" />
+      <xs:element name="_carrierExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CarrierContact">
+    <xs:sequence>
+      <xs:element name="contactPersonName" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="contactPersonPhoneNumber" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_carrierContactExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CertificateOfApproval">
+    <xs:sequence>
+      <xs:element name="certificateOfApproval" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_certificateOfApprovalExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="Class1CompatibilityGroupEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="c1cgA" />
+      <xs:enumeration value="c1cgB" />
+      <xs:enumeration value="c1cgC" />
+      <xs:enumeration value="c1cgD" />
+      <xs:enumeration value="c1cgE" />
+      <xs:enumeration value="c1cgF" />
+      <xs:enumeration value="c1cgG" />
+      <xs:enumeration value="c1cgH" />
+      <xs:enumeration value="c1cgJ" />
+      <xs:enumeration value="c1cgK" />
+      <xs:enumeration value="c1cgL" />
+      <xs:enumeration value="c1cgN" />
+      <xs:enumeration value="c1cgS" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Class1DivisionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="c1d1x1" />
+      <xs:enumeration value="c1d1x2" />
+      <xs:enumeration value="c1d1x3" />
+      <xs:enumeration value="c1d1x4" />
+      <xs:enumeration value="c1d1x5" />
+      <xs:enumeration value="c1d1x6" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Class7CarrierActions">
+    <xs:sequence>
+      <xs:element name="additionalActions" type="com:MultilingualString" minOccurs="1" maxOccurs="1" />
+      <xs:element name="restrictions" type="com:MultilingualString" minOccurs="1" maxOccurs="1" />
+      <xs:element name="emergencyArrangements" type="com:MultilingualString" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_class7CarrierActionsExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="CompetentAuthorityIdentificationType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z])*" />
+      <xs:minLength value="1" />
+      <xs:maxLength value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ConnectingCarrier" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dgt:Carrier">
+        <xs:sequence>
+          <xs:element name="_connectingCarrierExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Consignee">
+    <xs:sequence>
+      <xs:element name="address" type="dgt:Address" />
+      <xs:element name="_consigneeExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsigneeClass62">
+    <xs:complexContent>
+      <xs:extension base="dgt:Consignee">
+        <xs:sequence>
+          <xs:element name="responsiblePersonName" type="com:String" minOccurs="1" maxOccurs="1" />
+          <xs:element name="responsiblePersonPhoneNumber" type="com:String" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_consigneeClass62Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Consignor">
+    <xs:sequence>
+      <xs:element name="address" type="dgt:Address" />
+      <xs:element name="_consignorExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Container">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTransportUnit">
+        <xs:sequence>
+          <xs:element name="bicCode" type="dgt:BICCodesType" minOccurs="0" maxOccurs="1" />
+          <xs:element name="dgtDocumentId" type="com:Reference" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="containerIdent" type="dgt:ContainerIdentType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_containerExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ContainerIdentType">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="ContainerPackingCertificate">
+    <xs:sequence>
+      <xs:element name="containerPackingCertificate" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_containerPackingCertificateExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CoolingSubstances">
+    <xs:sequence>
+      <xs:element name="unNumber" type="dgt:UNNumber" />
+      <xs:element name="properShippingName" type="dgt:ProperShippingName" />
+      <xs:element name="_coolingSubstancesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <simpleType name="CryptoBinary" xmlns="http://www.w3.org/2001/XMLSchema">
+    <restriction base="xs:base64Binary" />
+  </simpleType>
+  <xs:simpleType name="DangerLabelEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="dl1" />
+      <xs:enumeration value="dl1x4" />
+      <xs:enumeration value="dl1x5" />
+      <xs:enumeration value="dl1x6" />
+      <xs:enumeration value="dl2x1" />
+      <xs:enumeration value="dl2x2" />
+      <xs:enumeration value="dl2x3" />
+      <xs:enumeration value="dl3" />
+      <xs:enumeration value="dl4x1" />
+      <xs:enumeration value="dl4x2" />
+      <xs:enumeration value="dl4x3" />
+      <xs:enumeration value="dl5x1" />
+      <xs:enumeration value="dl5x2" />
+      <xs:enumeration value="dl6x1" />
+      <xs:enumeration value="dl6x2" />
+      <xs:enumeration value="dl7A" />
+      <xs:enumeration value="dl7B" />
+      <xs:enumeration value="dl7C" />
+      <xs:enumeration value="dl7D" />
+      <xs:enumeration value="dl7E" />
+      <xs:enumeration value="dl8" />
+      <xs:enumeration value="dl9" />
+      <xs:enumeration value="dl9A" />
+      <xs:enumeration value="dl15" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DangerousGoodsQuantities">
+    <xs:sequence>
+      <xs:element name="totalQuantityPerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dangerousGoodsQuantitiesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGAccompanyingInformation">
+    <xs:sequence>
+      <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dangerousGoodsQuantities" type="dgt:DangerousGoodsQuantities" minOccurs="0" />
+      <xs:element name="exceptedQuantities" type="dgt:ExceptedQuantities" minOccurs="0" />
+      <xs:element name="exceptedPackagesClass7" type="dgt:ExceptedPackagesClass7" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="coolingSubstances" type="dgt:CoolingSubstances" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="meansOfIdentification" type="dgt:MeansOfIdentification" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="testReportForPackaging" type="dgt:TestReportForPackaging" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="expertTrainingCertificate" type="dgt:ExpertTrainingCertificate" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="instructionsInWriting" type="dgt:InstructionsInWriting" />
+      <xs:element name="unitFumigation" type="dgt:UnitFumigation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="certificateOfApproval" type="dgt:CertificateOfApproval" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="tankCertificate" type="dgt:TankCertificate" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgAccompanyingInformationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGBulkContainerApproval">
+    <xs:sequence>
+      <xs:element name="bulkContainerType" type="dgt:_BulkContainerTypeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="approvedByCompetentAuthority" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgBulkContainerApprovalExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGClassificationFireworks">
+    <xs:sequence>
+      <xs:element name="vehicleCountryCode" type="dgt:VehicleCountryCodeType" minOccurs="1" maxOccurs="1" />
+      <xs:element name="competentAuthorityIdentification" type="dgt:CompetentAuthorityIdentificationType" minOccurs="1" maxOccurs="1" />
+      <xs:element name="uniqueSerialReference" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgClassificationFireworksExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionOtherRegulations">
+    <xs:sequence>
+      <xs:element name="iMDGCode" type="dgt:Any" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ICAO" type="dgt:Any" minOccurs="0" maxOccurs="1" />
+      <xs:element name="containerPackingCertificate" type="dgt:ContainerPackingCertificate" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgConsignmentDescriptionOtherRegulationsExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionStatic">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTDocumentEntry">
+        <xs:sequence>
+          <xs:element name="numberOfPackages" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+          <xs:element name="packageTypeDescription" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+          <xs:element name="totalQuantityOfDG" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1" />
+          <xs:element name="unitTotalQuantityOfDG" type="dgt:_UnitDGQuantityEnum" minOccurs="0" maxOccurs="1" />
+          <xs:element name="deliverySale" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="declaration" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+          <xs:element name="waste" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="salvagePackage" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="hot" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+          <xs:element name="controlTempStabilized" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1" />
+          <xs:element name="emergencyTempStabilized" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1" />
+          <xs:element name="environmentallyHazardousSubstance" type="dgt:_EnvironmentallyHazardousSubstanceTypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="limitedQuantity" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="packagingDiscardedEmptyUncleaned" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgDescriptionDetails" type="dgt:DGDescriptionDetails" />
+          <xs:element name="dgOverpackUsed" type="dgt:DGOverpackUsed" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="dgSpecialProvision" type="dgt:DGSpecialProvision" minOccurs="0" />
+          <xs:element name="_dgConsignmentDescriptionStaticExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionStaticClass1">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGConsignmentDescriptionStatic">
+        <xs:sequence>
+          <xs:element name="explosiveContentNetMass" type="dgt:MassKilogram" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_dgConsignmentDescriptionStaticClass1Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionStaticClass2">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGConsignmentDescriptionStatic">
+        <xs:sequence>
+          <xs:element name="percentageOfMass" type="com:Percentage" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="percentageOfVolume" type="com:Percentage" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="massNewLoad" type="dgt:MassKilogram" minOccurs="0" maxOccurs="1" />
+          <xs:element name="valvesClosedUntil" type="com:Date" minOccurs="0" maxOccurs="1" />
+          <xs:element name="_dgConsignmentDescriptionStaticClass2Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionStaticClass7">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGConsignmentDescriptionStatic">
+        <xs:sequence>
+          <xs:element name="exclusiveUseShipment" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+          <xs:element name="approvalCertificateIDMark" type="dgt:ApprovalCertificateIDMark" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_dgConsignmentDescriptionStaticClass7Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionStaticClasses41And52">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGConsignmentDescriptionStatic">
+        <xs:sequence>
+          <xs:element name="controlTemp41And52" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1" />
+          <xs:element name="emergencyTemp41And52" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1" />
+          <xs:element name="labelConformingModelNo1NotReq" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="notSRSubstanceClass41" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+          <xs:element name="notSubstanceClass52" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+          <xs:element name="_dgConsignmentDescriptionStaticClasses41And52Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionADR">
+    <xs:sequence>
+      <xs:element name="tunnelRestrictionCode" type="dgt:_TunnelRestrictionCodeEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgDescriptionADRExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionClass1">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGDescriptionDetails">
+        <xs:sequence>
+          <xs:element name="class1Division" type="dgt:_Class1DivisionEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="compatibilityClass" type="dgt:_Class1CompatibilityGroupEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_dgDescriptionClass1Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionClass7">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGDescriptionDetails">
+        <xs:sequence>
+          <xs:element name="nameRadionuclide" type="com:String" minOccurs="0" maxOccurs="1" />
+          <xs:element name="formDescription" type="com:String" minOccurs="0" maxOccurs="1" />
+          <xs:element name="packageCategory" type="dgt:_PackageCategoryEnum" minOccurs="0" maxOccurs="1" />
+          <xs:element name="transportIndex" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1" />
+          <xs:element name="criticalitySafetyIndex" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1" />
+          <xs:element name="carriageIAW2x2x7x2x3x5" type="dgt:CarriageIAW2x2x7x2x3x5" minOccurs="0" />
+          <xs:element name="carriageIAW6x4x11x2" type="dgt:CarriageIAW6x4x11x2" minOccurs="0" />
+          <xs:element name="carriageIAW6x4x11x3" type="dgt:CarriageIAW6x4x11x3" minOccurs="0" />
+          <xs:element name="dgDescriptionRadioactiveContent" type="dgt:DGDescriptionRadioactiveContent" />
+          <xs:element name="_dgDescriptionClass7Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionClass9">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGDescriptionDetails">
+        <xs:sequence>
+          <xs:element name="_dgDescriptionClass9Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionDetails">
+    <xs:sequence>
+      <xs:element name="technicalName" type="com:MultilingualString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="dangerLabel" type="dgt:_DangerLabelEnum" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="packingGroup" type="dgt:_PackingGroupEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="transportCategory" type="dgt:TransportCategoryType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="dgDescriptionRID" type="dgt:DGDescriptionRID" minOccurs="0" />
+      <xs:element name="dgDescriptionADR" type="dgt:DGDescriptionADR" minOccurs="0" />
+      <xs:element name="unNumber" type="dgt:UNNumber" />
+      <xs:element name="properShippingName" type="dgt:ProperShippingName" />
+      <xs:element name="_dgDescriptionDetailsExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionRadioactiveContent">
+    <xs:sequence>
+      <xs:element name="maxActivity" type="dgt:RadioactivityBecquerel" minOccurs="0" maxOccurs="1" />
+      <xs:element name="massFissileMaterial" type="dgt:MassGram" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_dgDescriptionRadioactiveContentExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGDescriptionRID">
+    <xs:sequence>
+      <xs:element name="hazardIdentificationNumber" type="dgt:HazardIdentificationNumberType" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgDescriptionRIDExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGLoadAlarm">
+    <xs:sequence>
+      <xs:element name="loadAlarm" type="dgt:_LoadAlarmEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgLoadAlarmExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGLoadEvent">
+    <xs:sequence>
+      <xs:element name="loadEvent" type="dgt:_LoadEventEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgLoadEventExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGLoadInformationDynamic">
+    <xs:sequence>
+      <xs:element name="dgtDocumentEntryId" type="com:Reference" minOccurs="1" maxOccurs="1" />
+      <xs:element name="currentDateTimeLoad" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="positioningInformation" type="dgt:PositioningInformation" minOccurs="0" />
+      <xs:element name="dgLoadAlarm" type="dgt:DGLoadAlarm" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgLoadEvent" type="dgt:DGLoadEvent" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgLoadInformationDynamicExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGOverpackUsed">
+    <xs:sequence>
+      <xs:element name="overpackTotalQuantity" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="overpackDesignation" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgOverpackUsedExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGPublication">
+    <xs:complexContent>
+      <xs:extension base="com:PayloadPublication">
+        <xs:sequence>
+          <xs:element name="signature" type="dgt:SignatureType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgTransport" type="dgt:DGTransport" />
+          <xs:element name="_dgPublicationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGRailDeliveryPlace">
+    <xs:sequence>
+      <xs:element name="countryCodeISO" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="locationPrimaryCode" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="primaryLocationName" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="dgRailSubsidiaryCode" type="dgt:DGRailSubsidiaryCode" minOccurs="0" />
+      <xs:element name="_dgRailDeliveryPlaceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGRailSubsidiaryCode">
+    <xs:sequence>
+      <xs:element name="allocationCompany" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="locationSubsidiaryCode" type="com:String" minOccurs="1" maxOccurs="1" />
+      <xs:element name="locationSubsidiaryName" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_dgRailSubsidiaryCodeExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGRailWagonInformation">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTransportUnit">
+        <xs:sequence>
+          <xs:element name="wagonNumber" type="dgt:WagonIdentType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="wagonType" type="dgt:_WagonTypeEnum" minOccurs="0" maxOccurs="1" />
+          <xs:element name="wagonTrainPosition" type="dgt:WagonTrainPositionType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="limitedQuantityDG" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgtDocumentId" type="com:Reference" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="operationalTrainNumber" type="dgt:TrainIdentType" minOccurs="1" maxOccurs="1" />
+          <xs:element name="commitmentETA" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+          <xs:element name="actualETA" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+          <xs:element name="container" type="dgt:Container" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="dgRailDeliveryPlace" type="dgt:DGRailDeliveryPlace" minOccurs="0" />
+          <xs:element name="_dgRailWagonInformationExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGSpecialProvision">
+    <xs:sequence>
+      <xs:element name="_dgSpecialProvisionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGTDocument">
+    <xs:sequence>
+      <xs:element name="carriageIAW" type="dgt:_CarriagetIAWEnum" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="deliveryDate" type="com:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pickUpDate" type="com:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="approvalClasses41And52" type="dgt:ApprovalClasses41And52" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="class7CarrierActions" type="dgt:Class7CarrierActions" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="explosivesLabelStatement" type="dgt:ExplosivesLabelStatement" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="consignee" type="dgt:Consignee" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="consignor" type="dgt:Consignor" />
+      <xs:element name="quantitiesPerShipment" type="dgt:QuantitiesPerShipment" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgtDocumentEntry" type="dgt:_DGTDocumentIndexDGTDocumentEntry" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgBulkContainerApproval" type="dgt:DGBulkContainerApproval" minOccurs="0" />
+      <xs:element name="dgConsignmentDescriptionOtherRegulations" type="dgt:DGConsignmentDescriptionOtherRegulations" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgtDocumentExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DGTDocumentClass1">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTDocument">
+        <xs:sequence>
+          <xs:element name="explosiveContentNetMass" type="dgt:MassKilogram" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgClassificationFireworks" type="dgt:DGClassificationFireworks" minOccurs="0" />
+          <xs:element name="_dgtDocumentClass1Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGTDocumentClass7">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTDocument">
+        <xs:sequence>
+          <xs:element name="consignmentTotalActivity" type="dgt:RadioactivityBecquerel" minOccurs="0" maxOccurs="1" />
+          <xs:element name="_dgtDocumentClass7Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGTDocumentEntry" abstract="true">
+    <xs:sequence>
+      <xs:element name="_dgtDocumentEntryExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DGTransport">
+    <xs:sequence>
+      <xs:element name="dateTimeOfSignature" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="contains" type="dgt:DGAccompanyingInformation" minOccurs="0" />
+      <xs:element name="dgLoadInformationDynamic" type="dgt:DGLoadInformationDynamic" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgVehicleInformationDynamic" type="dgt:DGVehicleInformationDynamic" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgTransportUnit" type="dgt:DGTransportUnit" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgTransportExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="DGTransportUnit">
+    <xs:sequence>
+      <xs:element name="connectingCarrier" type="dgt:_DGTransportUnitIndexConnectingCarrier" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgTransportUnitExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGVehicleAlarm">
+    <xs:sequence>
+      <xs:element name="vehicleAlarm" type="dgt:_VehicleAlarmEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgVehicleAlarmExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGVehicleEvents">
+    <xs:sequence>
+      <xs:element name="vehicleEvent" type="dgt:_VehicleEventEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_dgVehicleEventsExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGVehicleInformationDynamic">
+    <xs:sequence>
+      <xs:element name="currentDateTimeVehicle" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="positioningInformation" type="dgt:PositioningInformation" />
+      <xs:element name="dgVehicleAlarm" type="dgt:DGVehicleAlarm" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgTransportUnit" type="dgt:DGTransportUnit" />
+      <xs:element name="dgVehicleEvents" type="dgt:DGVehicleEvents" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_dgVehicleInformationDynamicExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <element name="DigestMethod" type="dgt:DigestMethodType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="DigestMethodType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Algorithm" type="anyURI" use="required" />
+  </complexType>
+  <element name="DigestValue" type="dgt:DigestValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <simpleType name="DigestValueType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <restriction base="xs:base64Binary" />
+  </simpleType>
+  <element name="DSAKeyValue" type="dgt:DSAKeyValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="DSAKeyValueType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <sequence minOccurs="0">
+        <element name="P" type="dgt:CryptoBinary" />
+        <element name="Q" type="dgt:CryptoBinary" />
+      </sequence>
+      <element name="G" type="dgt:CryptoBinary" minOccurs="0" />
+      <element name="Y" type="dgt:CryptoBinary" />
+      <element name="J" type="dgt:CryptoBinary" minOccurs="0" />
+      <sequence minOccurs="0">
+        <element name="Seed" type="dgt:CryptoBinary" />
+        <element name="PgenCounter" type="dgt:CryptoBinary" />
+      </sequence>
+    </sequence>
+  </complexType>
+  <xs:complexType name="EmptyNonPackaging" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyUncleanedContainments">
+        <xs:sequence>
+          <xs:element name="dgDescriptionDetails" type="dgt:DGDescriptionDetails" />
+          <xs:element name="_emptyNonPackagingExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmptyPackaging" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyUncleanedContainments">
+        <xs:sequence>
+          <xs:element name="emptyPackagingType" type="dgt:_EmptyPackagingTypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_emptyPackagingExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmptyPackagingClass1">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyPackaging">
+        <xs:sequence>
+          <xs:element name="class1Division" type="dgt:_Class1DivisionEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="compatibilityClass" type="dgt:_Class1CompatibilityGroupEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_emptyPackagingClass1Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmptyPackagingClass2">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyPackaging">
+        <xs:sequence>
+          <xs:element name="_emptyPackagingClass2Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmptyPackagingClass3To6And8To9">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyPackaging">
+        <xs:sequence>
+          <xs:element name="dangerLabel" type="dgt:_DangerLabelEnum" minOccurs="1" maxOccurs="unbounded" />
+          <xs:element name="_emptyPackagingClass3To6And8To9Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EmptyPackagingTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emptyIBC" />
+      <xs:enumeration value="emptyLargePackaging" />
+      <xs:enumeration value="emptyPackaging" />
+      <xs:enumeration value="emptyReceptacle" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EmptyUncleaned" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyUncleanedContainments">
+        <xs:sequence>
+          <xs:element name="emptyUncleanedContainmentType" type="dgt:_EmptyUncleanedContainmentTypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgDescriptionDetails" type="dgt:DGDescriptionDetails" />
+          <xs:element name="_emptyUncleanedExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EmptyUncleanedContainmentLargeTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emptyBatteryVehicle" />
+      <xs:enumeration value="emptyContainer" />
+      <xs:enumeration value="emptyDemountableTank" />
+      <xs:enumeration value="emptyMEGC" />
+      <xs:enumeration value="emptyMEMU" />
+      <xs:enumeration value="emptyPortableTank" />
+      <xs:enumeration value="emptyReceptacle" />
+      <xs:enumeration value="emptyTankContainer" />
+      <xs:enumeration value="emptyTankVehicle" />
+      <xs:enumeration value="emptyVehicle" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EmptyUncleanedContainments" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTDocumentEntry">
+        <xs:sequence>
+          <xs:element name="_emptyUncleanedContainmentsExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EmptyUncleanedContainmentTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="emptyUncleaned" />
+      <xs:enumeration value="emptyUncleanedReturn" />
+      <xs:enumeration value="residueLastContained" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EmptyUncleanedLarge">
+    <xs:complexContent>
+      <xs:extension base="dgt:EmptyUncleanedContainments">
+        <xs:sequence>
+          <xs:element name="emptyUncleanedContainmentLargeType" type="dgt:_EmptyUncleanedContainmentLargeTypeEnum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="dgDescriptionDetails" type="dgt:DGDescriptionDetails" />
+          <xs:element name="_emptyUncleanedLargeExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EnvironmentallyHazardousSubstanceTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="environmentallyHazardous" />
+      <xs:enumeration value="marinePollutant" />
+      <xs:enumeration value="marinePollutantEnvHaz" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ExceptedPackagesClass7">
+    <xs:sequence>
+      <xs:element name="containerPackingCertificate" type="dgt:ContainerPackingCertificate" />
+      <xs:element name="consignee" type="dgt:Consignee" />
+      <xs:element name="unNumber" type="dgt:UNNumber" />
+      <xs:element name="properShippingName" type="dgt:ProperShippingName" minOccurs="0" />
+      <xs:element name="consignor" type="dgt:Consignor" />
+      <xs:element name="approvalCertificateIDMark" type="dgt:ApprovalCertificateIDMark" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="_exceptedPackagesClass7Extension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExceptedQuantities">
+    <xs:sequence>
+      <xs:element name="dGExceptedQuantities" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_exceptedQuantitiesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExpertTrainingCertificate">
+    <xs:sequence>
+      <xs:element name="expertTrainingCertificate" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_expertTrainingCertificateExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExplosivesLabelStatement">
+    <xs:sequence>
+      <xs:element name="explosivesLabelStatement" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_explosivesLabelStatementExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="HazardIdentificationNumberType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="X?[0-9]{2,3}" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HeightCoordinateExtended">
+    <xs:sequence>
+      <xs:element name="vpl" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <simpleType name="HMACOutputLengthType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <restriction base="xs:integer" />
+  </simpleType>
+  <xs:complexType name="InstructionsInWriting">
+    <xs:sequence>
+      <xs:element name="instructionsInWriting" type="com:Url" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_instructionsInWritingExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <element name="KeyInfo" type="dgt:KeyInfoType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="KeyInfoType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <choice maxOccurs="unbounded">
+      <element ref="dgt:KeyName" />
+      <element ref="dgt:KeyValue" />
+      <element ref="dgt:RetrievalMethod" />
+      <element ref="dgt:X509Data" />
+      <element ref="dgt:PGPData" />
+      <element ref="dgt:SPKIData" />
+      <element ref="dgt:MgmtData" />
+      <any processContents="lax" namespace="##other" />
+    </choice>
+    <attribute name="Id" type="ID" use="optional" />
+  </complexType>
+  <element name="KeyName" type="xs:string" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element name="KeyValue" type="dgt:KeyValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="KeyValueType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <choice>
+      <element ref="dgt:DSAKeyValue" />
+      <element ref="dgt:RSAKeyValue" />
+      <any namespace="##other" processContents="lax" />
+    </choice>
+  </complexType>
+  <xs:simpleType name="LoadAlarmEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fire" />
+      <xs:enumeration value="loadPressure" />
+      <xs:enumeration value="loadControlTemperature" />
+      <xs:enumeration value="loadGasLeakageCompartment" />
+      <xs:enumeration value="loadGasLeakageBatteryTank" />
+      <xs:enumeration value="unauthorisedOpening" />
+      <xs:enumeration value="geofencing" />
+      <xs:enumeration value="noAlarm" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LoadEventEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="loadHatch" />
+      <xs:enumeration value="buttonValves" />
+      <xs:enumeration value="noEvent" />
+      <xs:enumeration value="other" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <element name="Manifest" type="dgt:ManifestType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="ManifestType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:Reference" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Id" type="ID" use="optional" />
+  </complexType>
+  <xs:complexType name="MaritimeConnectingCarrier">
+    <xs:complexContent>
+      <xs:extension base="dgt:ConnectingCarrier">
+        <xs:sequence>
+          <xs:element name="_maritimeConnectingCarrierExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="MassGram">
+    <xs:restriction base="dgt:NonNegativeDecimal" />
+  </xs:simpleType>
+  <xs:simpleType name="MassKilogram">
+    <xs:restriction base="dgt:NonNegativeDecimal">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MeansOfIdentification">
+    <xs:sequence>
+      <xs:element name="driverIdentifier" type="dgt:Any" minOccurs="0" maxOccurs="1" />
+      <xs:element name="carrier" type="dgt:Carrier" />
+      <xs:element name="_meansOfIdentificationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <element name="MgmtData" type="xs:string" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <xs:complexType name="NonDG">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTDocumentEntry">
+        <xs:sequence>
+          <xs:element name="_nonDGExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NonNegativeDecimal">
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0" />
+    </xs:restriction>
+  </xs:simpleType>
+  <element name="Object" type="dgt:ObjectType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="ObjectType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence minOccurs="0" maxOccurs="unbounded">
+      <any namespace="##any" processContents="lax" />
+    </sequence>
+    <attribute name="Id" type="ID" use="optional" />
+    <attribute name="MimeType" type="xs:string" use="optional" />
+    <attribute name="Encoding" type="anyURI" use="optional" />
+  </complexType>
+  <xs:simpleType name="PackageCategoryEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pcIWhite" />
+      <xs:enumeration value="pcIIYellow" />
+      <xs:enumeration value="pcIIIYellow" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PackingGroupEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pgI" />
+      <xs:enumeration value="pgII" />
+      <xs:enumeration value="pgIII" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <element name="PGPData" type="dgt:PGPDataType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="PGPDataType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <choice>
+      <sequence>
+        <element name="PGPKeyID" type="xs:base64Binary" />
+        <element name="PGPKeyPacket" type="xs:base64Binary" minOccurs="0" />
+        <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+      </sequence>
+      <sequence>
+        <element name="PGPKeyPacket" type="xs:base64Binary" />
+        <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+      </sequence>
+    </choice>
+  </complexType>
+  <xs:complexType name="PointCoordinatesExtended">
+    <xs:sequence>
+      <xs:element name="dateTimeOfThePositionGivenByReceptor" type="com:DateTime" minOccurs="0" maxOccurs="1" />
+      <xs:element name="height" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="hpl" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="signature" type="com:String" minOccurs="0" maxOccurs="1" />
+      <xs:element name="correctionApplied" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="authenticationFunctionStatus" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="authenticationFunctionResult" type="dgt:Byte" minOccurs="0" maxOccurs="1" />
+      <xs:element name="rawDataMessage" type="dgt:RawDataMessage" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PositioningInformation">
+    <xs:sequence>
+      <xs:element name="speed" type="com:KilometresPerHour" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pointByCoordinates" type="loc:PointByCoordinates" maxOccurs="unbounded" />
+      <xs:element name="_positioningInformationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProperShippingName">
+    <xs:sequence>
+      <xs:element name="properShippingName" type="com:MultilingualString" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_properShippingNameExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PseudorangeUnitEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="meters" />
+      <xs:enumeration value="milliseconds" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="QuantitiesPerShipment">
+    <xs:sequence>
+      <xs:element name="totalQuantityPerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="unitTotalQuantityPerTransportUnit" type="dgt:_UnitDGQuantityEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="totalQuantityPerCategoryPerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="5" />
+      <xs:element name="sP392" type="dgt:SP392" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgtDocumentEntry" type="dgt:DGTDocumentEntry" maxOccurs="unbounded" />
+      <xs:element name="_quantitiesPerShipmentExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RadioactivityBecquerel">
+    <xs:restriction base="dgt:NonNegativeDecimal" />
+  </xs:simpleType>
+  <xs:complexType name="RailConnectingCarrier">
+    <xs:complexContent>
+      <xs:extension base="dgt:ConnectingCarrier">
+        <xs:sequence>
+          <xs:element name="company" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_railConnectingCarrierExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RawDataMessage">
+    <xs:sequence>
+      <xs:element name="extendedGpsWeekNnumber" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="gpsTimeOfWeek" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="numberOfSatellitesTrackedGPS" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="x" type="com:MetresAsFloat" minOccurs="1" maxOccurs="1" />
+      <xs:element name="y" type="com:MetresAsFloat" minOccurs="1" maxOccurs="1" />
+      <xs:element name="z" type="com:MetresAsFloat" minOccurs="1" maxOccurs="1" />
+      <xs:element name="numberOfSatellitesTrackedGalileo" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="numberOfSatellitesTrackedGlonass" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="numberOfSatellitesTrackedBeidou" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="numberOfSatellitesTrackedQzss" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="sbasGpsCorrectionStatus" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="trackedSatellite" type="dgt:TrackedSatellite" minOccurs="4" maxOccurs="unbounded" />
+      <xs:element name="_rawDataMessageExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <element name="Reference" type="dgt:ReferenceType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="ReferenceType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:Transforms" minOccurs="0" />
+      <element ref="dgt:DigestMethod" />
+      <element ref="dgt:DigestValue" />
+    </sequence>
+    <attribute name="Id" type="ID" use="optional" />
+    <attribute name="URI" type="anyURI" use="optional" />
+    <attribute name="Type" type="anyURI" use="optional" />
+  </complexType>
+  <element name="RetrievalMethod" type="dgt:RetrievalMethodType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="RetrievalMethodType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:Transforms" minOccurs="0" />
+    </sequence>
+    <attribute name="URI" type="anyURI" />
+    <attribute name="Type" type="anyURI" use="optional" />
+  </complexType>
+  <xs:complexType name="RoadConnectingCarrier">
+    <xs:complexContent>
+      <xs:extension base="dgt:ConnectingCarrier">
+        <xs:sequence>
+          <xs:element name="_roadConnectingCarrierExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RoadVehicle">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTransportUnit">
+        <xs:sequence>
+          <xs:element name="vehicleExtension" type="dgt:VehicleExtension" maxOccurs="unbounded" />
+          <xs:element name="_roadVehicleExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <element name="RSAKeyValue" type="dgt:RSAKeyValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="RSAKeyValueType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element name="Modulus" type="dgt:CryptoBinary" />
+      <element name="Exponent" type="dgt:CryptoBinary" />
+    </sequence>
+  </complexType>
+  <element name="Signature" type="dgt:SignatureType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element name="SignatureMethod" type="dgt:SignatureMethodType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="SignatureMethodType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element name="HMACOutputLength" minOccurs="0" type="dgt:HMACOutputLengthType" />
+      <any namespace="##other" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Algorithm" type="anyURI" use="required" />
+  </complexType>
+  <element name="SignatureProperties" type="dgt:SignaturePropertiesType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="SignaturePropertiesType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:SignatureProperty" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Id" type="ID" use="optional" />
+  </complexType>
+  <element name="SignatureProperty" type="dgt:SignaturePropertyType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="SignaturePropertyType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <choice maxOccurs="unbounded">
+      <any namespace="##other" processContents="lax" />
+    </choice>
+    <attribute name="Target" type="anyURI" use="required" />
+    <attribute name="Id" type="ID" use="optional" />
+  </complexType>
+  <complexType name="SignatureType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:SignedInfo" />
+      <element ref="dgt:SignatureValue" />
+      <element ref="dgt:KeyInfo" minOccurs="0" />
+      <element ref="dgt:Object" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Id" type="ID" use="optional" />
+  </complexType>
+  <element name="SignatureValue" type="dgt:SignatureValueType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="SignatureValueType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <simpleContent>
+      <extension base="xs:base64Binary">
+        <attribute name="Id" type="ID" use="optional" />
+      </extension>
+    </simpleContent>
+  </complexType>
+  <element name="SignedInfo" type="dgt:SignedInfoType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="SignedInfoType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:CanonicalizationMethod" />
+      <element ref="dgt:SignatureMethod" />
+      <element ref="dgt:Reference" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="Id" type="ID" use="optional" />
+  </complexType>
+  <xs:complexType name="SP310">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP310Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP356">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="metalHydrideStorageSystemApproval" type="com:Boolean" minOccurs="1" maxOccurs="1" />
+          <xs:element name="metalHydrideStorageSystemApprovalDocument" type="dgt:Any" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_sP356Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP363">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP363Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP373">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP373Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP376">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP376Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP378">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP378Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP392">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="containmentSystemsQuantity" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+          <xs:element name="_sP392Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP640">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="substanceClassificationTankCode" type="dgt:_SpecialProvision640Enum" minOccurs="1" maxOccurs="1" />
+          <xs:element name="_sP640Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP662">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP662Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP664">
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP664Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SpecialProvision640Enum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sp640C" />
+      <xs:enumeration value="sp640D" />
+      <xs:enumeration value="sp640E" />
+      <xs:enumeration value="sp640F" />
+      <xs:enumeration value="sp640G" />
+      <xs:enumeration value="sp640H" />
+      <xs:enumeration value="sp640I" />
+      <xs:enumeration value="sp640J" />
+      <xs:enumeration value="sp640K" />
+      <xs:enumeration value="sp640L" />
+      <xs:enumeration value="sp640M" />
+      <xs:enumeration value="sp640N" />
+      <xs:enumeration value="sp640O" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <element name="SPKIData" type="dgt:SPKIDataType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="SPKIDataType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence maxOccurs="unbounded">
+      <element name="SPKISexp" type="xs:base64Binary" />
+      <any namespace="##other" processContents="lax" minOccurs="0" />
+    </sequence>
+  </complexType>
+  <xs:complexType name="TankCertificate">
+    <xs:sequence>
+      <xs:element name="tankCertificate" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_tankCertificateExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TestReportForPackaging">
+    <xs:sequence>
+      <xs:element name="testReportForPackaging" type="dgt:Any" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_testReportForPackagingExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TrackedSatellite">
+    <xs:sequence>
+      <xs:element name="nmaStatus" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1" />
+      <xs:element name="prnAuthentication" type="dgt:Byte" minOccurs="0" maxOccurs="1" />
+      <xs:element name="prnSatelliteId" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="gnssId" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="trackedSignal" type="dgt:TrackedSignal" maxOccurs="unbounded" />
+      <xs:element name="_trackedSatelliteExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TrackedSignal">
+    <xs:sequence>
+      <xs:element name="cN0" type="com:Integer" minOccurs="1" maxOccurs="1" />
+      <xs:element name="doppler" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="phase" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="pseudorangeUnit" type="dgt:_PseudorangeUnitEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="signalType" type="com:NonNegativeInteger" minOccurs="1" maxOccurs="1" />
+      <xs:element name="valueOfPseudorange" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_trackedSignalExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TrainIdentType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+  <element name="Transform" type="dgt:TransformType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <element name="Transforms" type="dgt:TransformsType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="TransformsType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element ref="dgt:Transform" maxOccurs="unbounded" />
+    </sequence>
+  </complexType>
+  <complexType name="TransformType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <any namespace="##other" processContents="lax" />
+      <element name="XPath" type="xs:string" />
+    </choice>
+    <attribute name="Algorithm" type="anyURI" use="required" />
+  </complexType>
+  <xs:simpleType name="TransportCategoryType">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TunnelRestrictionCodeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="trcNone" />
+      <xs:enumeration value="trcB" />
+      <xs:enumeration value="trcBD" />
+      <xs:enumeration value="trcB1000C" />
+      <xs:enumeration value="trcBE" />
+      <xs:enumeration value="trcC" />
+      <xs:enumeration value="trcC5000D" />
+      <xs:enumeration value="trcCD" />
+      <xs:enumeration value="trcCE" />
+      <xs:enumeration value="trcD" />
+      <xs:enumeration value="trcDE" />
+      <xs:enumeration value="trcE" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="UnitDGQuantityEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="grossMass" />
+      <xs:enumeration value="netMass" />
+      <xs:enumeration value="volume" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="UnitFumigation">
+    <xs:sequence>
+      <xs:element name="dgClass" type="dgt:_DangerLabelEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="fumigationDateTime" type="com:DateTime" minOccurs="1" maxOccurs="1" />
+      <xs:element name="quantityOfFumigant" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1" />
+      <xs:element name="unitQuantityOfFumigant" type="dgt:_UnitDGQuantityEnum" minOccurs="1" maxOccurs="1" />
+      <xs:element name="unNumber" type="dgt:UNNumber" />
+      <xs:element name="properShippingName" type="dgt:ProperShippingName" />
+      <xs:element name="_unitFumigationExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="UnNumber">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:totalDigits value="4" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="UNNumber">
+    <xs:sequence>
+      <xs:element name="unNumber" type="dgt:UnNumber" minOccurs="1" maxOccurs="1" />
+      <xs:element name="_unNumberExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="VehicleAlarmEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="fire" />
+      <xs:enumeration value="shock" />
+      <xs:enumeration value="derailment" />
+      <xs:enumeration value="axleBearingTemperature" />
+      <xs:enumeration value="vehicleBrake" />
+      <xs:enumeration value="unauthorisedUse" />
+      <xs:enumeration value="routing" />
+      <xs:enumeration value="geofencing" />
+      <xs:enumeration value="other" />
+      <xs:enumeration value="activationEBS" />
+      <xs:enumeration value="activationCabinEmergencyButton" />
+      <xs:enumeration value="activationTrailerEmergencyButton" />
+      <xs:enumeration value="noAlarm" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VehicleCountryCodeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z])*" />
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VehicleEventEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="vapourRecovery" />
+      <xs:enumeration value="pneumaticBox" />
+      <xs:enumeration value="manHoles" />
+      <xs:enumeration value="ignition" />
+      <xs:enumeration value="vehicleWeight" />
+      <xs:enumeration value="tyrePressure" />
+      <xs:enumeration value="other" />
+      <xs:enumeration value="noEvent" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleExtension">
+    <xs:complexContent>
+      <xs:extension base="com:Vehicle">
+        <xs:sequence>
+          <xs:element name="dgtDocumentId" type="com:Reference" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="container" type="dgt:Container" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="_vehicleExtensionExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="WagonIdentType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="8" />
+      <xs:maxLength value="12" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WagonTrainPositionType">
+    <xs:restriction base="xs:nonNegativeInteger">
+      <xs:minInclusive value="1" />
+      <xs:maxInclusive value="999" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WagonTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="wtE" />
+      <xs:enumeration value="wtF" />
+      <xs:enumeration value="wtG" />
+      <xs:enumeration value="wtH" />
+      <xs:enumeration value="wtI" />
+      <xs:enumeration value="wtK" />
+      <xs:enumeration value="wtL" />
+      <xs:enumeration value="wtO" />
+      <xs:enumeration value="wtR" />
+      <xs:enumeration value="wtS" />
+      <xs:enumeration value="wtT" />
+      <xs:enumeration value="wtU" />
+      <xs:enumeration value="wtZ" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="WaterWayConnectingCarrier">
+    <xs:complexContent>
+      <xs:extension base="dgt:ConnectingCarrier">
+        <xs:sequence>
+          <xs:element name="_waterWayConnectingCarrierExtension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <element name="X509Data" type="dgt:X509DataType" xmlns="http://www.w3.org/2001/XMLSchema" />
+  <complexType name="X509DataType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence maxOccurs="unbounded">
+      <choice>
+        <element name="X509IssuerSerial" type="dgt:X509IssuerSerialType" />
+        <element name="X509SKI" type="xs:base64Binary" />
+        <element name="X509SubjectName" type="xs:string" />
+        <element name="X509Certificate" type="xs:base64Binary" />
+        <element name="X509CRL" type="xs:base64Binary" />
+        <any namespace="##other" processContents="lax" />
+      </choice>
+    </sequence>
+  </complexType>
+  <complexType name="X509IssuerSerialType" xmlns="http://www.w3.org/2001/XMLSchema">
+    <sequence>
+      <element name="X509IssuerName" type="xs:string" />
+      <element name="X509SerialNumber" type="xs:integer" />
+    </sequence>
+  </complexType>
+</xs:schema>

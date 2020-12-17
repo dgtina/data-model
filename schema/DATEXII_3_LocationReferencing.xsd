@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:loc="http://datex2.eu/schema/3/locationReferencing" version="3.0" targetNamespace="http://datex2.eu/schema/3/locationReferencing" xmlns:dgt="http://datex2.eu/schema/3/dangerousGoodsTransport" xmlns:com="http://datex2.eu/schema/3/common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://datex2.eu/schema/3/common" schemaLocation="DATEXII_3_Common.xsd" />
+  <xs:import namespace="http://datex2.eu/schema/3/dangerousGoodsTransport" schemaLocation="DATEXII_3_DangerousGoodsTransport.xsd" />
+  <xs:complexType name="_AltitudeAccuracyEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:AltitudeAccuracyEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_HeightCoordinateExtensionType">
+    <xs:sequence>
+      <xs:element name="heightCoordinateExtended" type="dgt:HeightCoordinateExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_HeightTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:HeightTypeEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_PointCoordinatesExtensionType">
+    <xs:sequence>
+      <xs:element name="pointCoordinatesExtended" type="dgt:PointCoordinatesExtended" minOccurs="0" />
+      <xs:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="_PositionConfidenceCodedErrorEnum">
+    <xs:simpleContent>
+      <xs:extension base="loc:PositionConfidenceCodedErrorEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AltitudeAccuracyEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="equalToOrLessThan1Centimetre" />
+      <xs:enumeration value="equalToOrLessThan2Centimetres" />
+      <xs:enumeration value="equalToOrLessThan5Centimetres" />
+      <xs:enumeration value="equalToOrLessThan10Centimetres" />
+      <xs:enumeration value="equalToOrLessThan20Centimetres" />
+      <xs:enumeration value="equalToOrLessThan50Centimetres" />
+      <xs:enumeration value="equalToOrLessThan1Metre" />
+      <xs:enumeration value="equalToOrLessThan2Metres" />
+      <xs:enumeration value="equalToOrLessThan5Metres" />
+      <xs:enumeration value="equalToOrLessThan10Metres" />
+      <xs:enumeration value="equalToOrLessThan20Metres" />
+      <xs:enumeration value="equalToOrLessThan50Metres" />
+      <xs:enumeration value="equalToOrLessThan100Metres" />
+      <xs:enumeration value="equalToOrLessThan200Metres" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AltitudeConfidence">
+    <xs:sequence>
+      <xs:element name="altitudeAccuracyCodedValue" type="loc:_AltitudeAccuracyEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="altitudeAccuracyCodedError" type="loc:_PositionConfidenceCodedErrorEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_altitudeConfidenceExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HeightCoordinate">
+    <xs:sequence>
+      <xs:element name="heightValue" type="com:MetresAsFloat" minOccurs="1" maxOccurs="1" />
+      <xs:element name="heightType" type="loc:_HeightTypeEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="altitudeConfidence" type="loc:AltitudeConfidence" minOccurs="0" />
+      <xs:element name="verticalPositionAccuracy" type="loc:PositionAccuracy" minOccurs="0" />
+      <xs:element name="_heightCoordinateExtension" type="loc:_HeightCoordinateExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="HeightTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ellipsoidalHeight" />
+      <xs:enumeration value="gravityRelatedHeight" />
+      <xs:enumeration value="relativeHeight" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PointByCoordinates">
+    <xs:sequence>
+      <xs:element name="bearing" type="com:AngleInDegrees" minOccurs="0" maxOccurs="1" />
+      <xs:element name="pointCoordinates" type="loc:PointCoordinates" />
+      <xs:element name="speedGivenByGnss" type="com:SpeedValue" minOccurs="0" />
+      <xs:element name="_pointByCoordinatesExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PointCoordinates">
+    <xs:sequence>
+      <xs:element name="latitude" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="longitude" type="com:Float" minOccurs="1" maxOccurs="1" />
+      <xs:element name="heightCoordinate" type="loc:HeightCoordinate" minOccurs="0" maxOccurs="3" />
+      <xs:element name="positionConfidenceEllipse" type="loc:PositionConfidenceEllipse" minOccurs="0" />
+      <xs:element name="horizontalPositionAccuracy" type="loc:PositionAccuracy" minOccurs="0" />
+      <xs:element name="_pointCoordinatesExtension" type="loc:_PointCoordinatesExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PositionAccuracy">
+    <xs:sequence>
+      <xs:element name="accuracyPercentile50" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="accuracyPercentile75" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="accuracyPercentile95" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_positionAccuracyExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PositionConfidenceCodedErrorEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="outOfRange" />
+      <xs:enumeration value="unavailable" />
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PositionConfidenceEllipse">
+    <xs:sequence>
+      <xs:element name="semiMajorAxisLength" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="semiMajorAxisLengthCodedError" type="loc:_PositionConfidenceCodedErrorEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="semiMinorAxisLength" type="com:MetresAsFloat" minOccurs="0" maxOccurs="1" />
+      <xs:element name="semiMinorAxisLengthCodedError" type="loc:_PositionConfidenceCodedErrorEnum" minOccurs="0" maxOccurs="1" />
+      <xs:element name="semiMajorAxisOrientation" type="com:AngleInDegrees" minOccurs="0" maxOccurs="1" />
+      <xs:element name="semiMajorAxisOrientationError" type="com:Boolean" minOccurs="0" maxOccurs="1" />
+      <xs:element name="_positionConfidenceEllipseExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
