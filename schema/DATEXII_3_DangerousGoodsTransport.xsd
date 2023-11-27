@@ -16,6 +16,13 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="_CarriageIAW1x1x4x7Enum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:CarriageIAW1x1x4x7Enum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="_CarriagetIAWEnum">
     <xs:simpleContent>
       <xs:extension base="dgt:CarriagetIAWEnum">
@@ -33,6 +40,13 @@
   <xs:complexType name="_Class1DivisionEnum">
     <xs:simpleContent>
       <xs:extension base="dgt:Class1DivisionEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_CoolingConditioningTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:CoolingConditioningTypeEnum">
         <xs:attribute name="_extendedValue" type="xs:string" />
       </xs:extension>
     </xs:simpleContent>
@@ -129,6 +143,13 @@
   <xs:complexType name="_PseudorangeUnitEnum">
     <xs:simpleContent>
       <xs:extension base="dgt:PseudorangeUnitEnum">
+        <xs:attribute name="_extendedValue" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="_SalvagePackingTypeEnum">
+    <xs:simpleContent>
+      <xs:extension base="dgt:SalvagePackingTypeEnum">
         <xs:attribute name="_extendedValue" type="xs:string" />
       </xs:extension>
     </xs:simpleContent>
@@ -320,6 +341,16 @@
       <xs:element name="_approvalClasses41And52Extension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
+  <xs:simpleType name="AuthorityCountryCodeType">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (g) - Distinguishing sign of state of registration used on motor vehicles and trailers in international traffic</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z])*" />
+      <xs:minLength value="1" />
+      <xs:maxLength value="3" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="Barge">
     <xs:annotation>
       <xs:documentation>Barge</xs:documentation>
@@ -383,6 +414,41 @@
     </sequence>
     <attribute name="Algorithm" type="anyURI" use="required" />
   </complexType>
+  <xs:complexType name="CarriageIAW1x1x4x7">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.1.24 - Special provisions for refillable pressure receptacles authorized by the United States of America Department of Transportation</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="carriageIAW1x1x4x7" type="dgt:_CarriageIAW1x1x4x7Enum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 1.1.4.7 - Refillable pressure receptacles authorised by the United States of America Department of Transportation</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_carriageIAW1x1x4x7Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CarriageIAW1x1x4x7Enum">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 1.1.4.7 - Refillable pressure receptacles authorised by the United States of America Department of Transportation</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ciaw1x1x4x7x1">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 1.1.4.7.1 - Import of gases</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ciaw1x1x4x7x2">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 1.1.4.7.2 - Export of gases and empty uncleaned pressure receptacles</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="CarriageIAW2x1x2x8">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.4.1.1.20</xs:documentation>
@@ -415,6 +481,18 @@
       <xs:extension base="dgt:DGSpecialProvision">
         <xs:sequence>
           <xs:element name="_carriageIAW2x2x7x2x3x5Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CarriageIAW5x4x1x1x3x2">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.1.3.2 - Indicates that the quantity of waste is estimaded</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_carriageIAW5x4x1x1x3x2Extension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -473,17 +551,17 @@
           <xs:documentation>ADN/ADR/RID 5.4.1.1.6.4 - Identify risks from fumes/residues</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ciaw6x7x2x19x6b">
+      <xs:enumeration value="ciaw6x7x2x19x6x1b">
         <xs:annotation>
           <xs:documentation>ADN/ADR/RID 5.4.1.1.11 - Indicates that journey must be to inspection/disposal facility</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ciaw6x7x3x15x6b">
+      <xs:enumeration value="ciaw6x7x3x15x6x1b">
         <xs:annotation>
           <xs:documentation>ADN/ADR/RID 5.4.1.1.11 - Indicates that journey must be to inspection/disposal facility</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ciaw6x7x4x14x6b">
+      <xs:enumeration value="ciaw6x7x4x14x6x1b">
         <xs:annotation>
           <xs:documentation>ADN/ADR/RID 5.4.1.1.11 - Indicates that journey must be to inspection/disposal facility</xs:documentation>
         </xs:annotation>
@@ -516,8 +594,9 @@
       <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (g) - To identify the person who initiated the transport</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="address" type="dgt:Address" />
       <xs:element name="carrierContact" type="dgt:CarrierContact" minOccurs="0" />
+      <xs:element name="address" type="dgt:Address" />
+      <xs:element name="uniqueCompanyIdentifier" type="dgt:UniqueCompanyIdentifier" minOccurs="0" />
       <xs:element name="_carrierExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -714,6 +793,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="address" type="dgt:Address" />
+      <xs:element name="uniqueCompanyIdentifier" type="dgt:UniqueCompanyIdentifier" minOccurs="0" />
       <xs:element name="_consigneeExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -745,6 +825,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="address" type="dgt:Address" />
+      <xs:element name="uniqueCompanyIdentifier" type="dgt:UniqueCompanyIdentifier" minOccurs="0" />
       <xs:element name="_consignorExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -796,7 +877,7 @@
   </xs:complexType>
   <xs:complexType name="ContainmentSystemContent">
     <xs:annotation>
-      <xs:documentation>DN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances, SP392 (h)</xs:documentation>
+      <xs:documentation>ADN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances, SP392 (h)</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="gasType" type="dgt:_GasTypeEnum" minOccurs="1" maxOccurs="1">
@@ -827,6 +908,24 @@
       <xs:element name="_containmentSystemContentExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
+  <xs:simpleType name="CoolingConditioningTypeEnum">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.5.3.7.1</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="conditioningType">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 5.5.3.7.1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="coolingType">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 5.5.3.7.1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="CoolingSubstances">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.5.3.7.1</xs:documentation>
@@ -963,17 +1062,17 @@
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="DangerousGoodsQuantities">
+  <xs:complexType name="DangerousGoodsQuantities1x1x3x6">
     <xs:annotation>
       <xs:documentation>ADN/ADR 1.1.3.6 - Automatic calculation of the total maximum quantity per transport unit</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="totalQuantityPerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1">
+      <xs:element name="totalQuantity1x1x3x6PerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>ADN/ADR 1.1.3.6 - Automatic calculation of the total maximum quantity per transport unit</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="_dangerousGoodsQuantitiesExtension" type="com:_ExtensionType" minOccurs="0" />
+      <xs:element name="_dangerousGoodsQuantities1x1x3x6Extension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DGAccompanyingInformation">
@@ -982,7 +1081,7 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="dgtDocument" type="dgt:DGTDocument" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="dangerousGoodsQuantities" type="dgt:DangerousGoodsQuantities" minOccurs="0" />
+      <xs:element name="dangerousGoodsQuantities1x1x3x6" type="dgt:DangerousGoodsQuantities1x1x3x6" minOccurs="0" />
       <xs:element name="exceptedQuantities" type="dgt:ExceptedQuantities" minOccurs="0" />
       <xs:element name="exceptedPackagesClass7" type="dgt:ExceptedPackagesClass7" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="coolingSubstances" type="dgt:CoolingSubstances" minOccurs="0" maxOccurs="unbounded" />
@@ -993,6 +1092,7 @@
       <xs:element name="unitFumigation" type="dgt:UnitFumigation" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="certificateOfApproval" type="dgt:CertificateOfApproval" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="tankCertificate" type="dgt:TankCertificate" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="dgtClass1" type="dgt:DGTClass1" minOccurs="0" />
       <xs:element name="_dgAccompanyingInformationExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -1019,7 +1119,7 @@
       <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (g)</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="vehicleCountryCode" type="dgt:VehicleCountryCodeType" minOccurs="1" maxOccurs="1">
+      <xs:element name="authorityCountryCode" type="dgt:AuthorityCountryCodeType" minOccurs="1" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (g)</xs:documentation>
         </xs:annotation>
@@ -1063,6 +1163,46 @@
     <xs:complexContent>
       <xs:extension base="dgt:DGTDocumentEntry">
         <xs:sequence>
+          <xs:element name="chemicalStabilization" type="com:Boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.1.15 -  Special provisions for the carriage of substances stabilized by chemical stabilization</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="controlTempStabilized" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADR 5.4.1.1.15 - Need to maintain conditions</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="deliverySale" type="com:Boolean" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (h) - To identify destination</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="emergencyTempStabilized" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADR/ADN 5.4.1.1.15 - Need to maintain conditions</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="environmentallyHazardousSubstance" type="dgt:_EnvironmentallyHazardousSubstanceTypeEnum" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.1.18</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="hot" type="com:Boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.1.14 - Identify scalding/burning hazard</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="limitedQuantity" type="com:Boolean" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/RID/ADR 3.4 - Limited quantity (LQ) exemptions</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="molten" type="com:Boolean" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/RID/ADR 5.4.1.1.23 - Special provisions for the carriage of substances carried in molten state</xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element name="numberOfPackages" type="com:NonNegativeInteger" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (e) - Indicate what DGs are contained</xs:documentation>
@@ -1071,6 +1211,16 @@
           <xs:element name="packageTypeDescription" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (e) - Indicate what DGs are contained</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="packagingDiscardedEmptyUncleaned" type="com:Boolean" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.1.19</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="salvagePackage" type="dgt:_SalvagePackingTypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.1.5 - Indicates a special packaging situation</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="totalQuantityOfDG" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
@@ -1083,59 +1233,14 @@
               <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (f) - Indicate quantity of individual DGs</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="deliverySale" type="com:Boolean" minOccurs="1" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (h) - To identify destination</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="declaration" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (i) - Declaration required by multilateral agreement, For national special provision please use the D2Class DGSpecialProvision</xs:documentation>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="waste" type="com:Boolean" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>ADN/ADR/RID 5.4.1.1.3 - To identify simplified classification of wastes and interface with waste regs</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="salvagePackage" type="com:Boolean" minOccurs="1" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.1.5 - Indicates a special packaging situation</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="hot" type="com:Boolean" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.1.14 - Identify scalding/burning hazard</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="controlTempStabilized" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADR 5.4.1.1.15 - Need to maintain conditions</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="emergencyTempStabilized" type="com:TemperatureCelsius" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADR 5.4.1.1.15 - Need to maintain conditions</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="environmentallyHazardousSubstance" type="dgt:_EnvironmentallyHazardousSubstanceTypeEnum" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.1.18</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="limitedQuantity" type="com:Boolean" minOccurs="1" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR 3.4 - Limited quantity (LQ) exemptions</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="packagingDiscardedEmptyUncleaned" type="com:Boolean" minOccurs="1" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.1.19</xs:documentation>
-            </xs:annotation>
-          </xs:element>
           <xs:element name="dgDescriptionDetails" type="dgt:DGDescriptionDetails" />
           <xs:element name="dgOverpackUsed" type="dgt:DGOverpackUsed" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="dgSpecialProvision" type="dgt:DGSpecialProvision" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element name="dgConsignmentDescriptionStaticWaste" type="dgt:DGConsignmentDescriptionStaticWaste" minOccurs="0" />
           <xs:element name="_dgConsignmentDescriptionStaticExtension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
@@ -1182,7 +1287,7 @@
           </xs:element>
           <xs:element name="valvesClosedUntil" type="com:Date" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation>RID 5.4.1.2.2 (d) - Indicates specific conditions of transport</xs:documentation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.2.2 (d) - Indicates specific conditions of transport</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="_dgConsignmentDescriptionStaticClass2Extension" type="com:_ExtensionType" minOccurs="0" />
@@ -1244,6 +1349,24 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGConsignmentDescriptionStaticWaste">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.1.3.2 - Indicates special provisions for wastes, if it is not possible to measure the exact quantity of the waste at the place of loading</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="quantityEstimatedIAW5x4x1x1x3x2" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 5.4.1.1.3.2 - Indicates special provisions for wastes, if it is not possible to measure the exact quantity of the waste at the place of loading</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unitQuantityEstimatedIAW5x4x1x1x3x2" type="dgt:_UnitDGQuantityEnum" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 5.4.1.1.3.2 - Indicates special provisions for wastes, if it is not possible to measure the exact quantity of the waste at the place of loading</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="_dgConsignmentDescriptionStaticWasteExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DGDescriptionADR">
     <xs:annotation>
@@ -1355,13 +1478,14 @@
       </xs:element>
       <xs:element name="transportCategory" type="dgt:TransportCategoryType" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>ADN/ADR 1.1.3.6.1 - Automatic calculation of the total maximum quantity per transport unit</xs:documentation>
+          <xs:documentation>RID/ADR 1.1.3.6.1 - Calculation of the total maximum quantity per transport unit</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="dgDescriptionRID" type="dgt:DGDescriptionRID" minOccurs="0" />
       <xs:element name="dgDescriptionADR" type="dgt:DGDescriptionADR" minOccurs="0" />
       <xs:element name="unNumber" type="dgt:UNNumber" />
       <xs:element name="properShippingName" type="dgt:ProperShippingName" />
+      <xs:element name="dgSpecialProvision" type="dgt:DGSpecialProvision" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="_dgDescriptionDetailsExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -1585,7 +1709,25 @@
       <xs:documentation>ADN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="declaration" type="com:MultilingualString" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (i) - Declaration required by multilateral agreement, For national special provision please use the D2Class DGSpecialProvision</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="_dgSpecialProvisionExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DGTClass1">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives for all substances and articles covered by the transport </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="explosiveContentNetMassTotalTransport" type="dgt:MassKilogram" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives for all substances and articles covered by the transport </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="_dgtClass1Extension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="DGTDocument">
@@ -1613,7 +1755,7 @@
       <xs:element name="explosivesLabelStatement" type="dgt:ExplosivesLabelStatement" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="consignee" type="dgt:Consignee" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="consignor" type="dgt:Consignor" />
-      <xs:element name="quantitiesPerShipment" type="dgt:QuantitiesPerShipment" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="quantitiesPerShipment" type="dgt:QuantitiesPerShipment" minOccurs="0" />
       <xs:element name="dgtDocumentEntry" type="dgt:_DGTDocumentIndexDGTDocumentEntry" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="dgBulkContainerApproval" type="dgt:DGBulkContainerApproval" minOccurs="0" />
       <xs:element name="dgConsignmentDescriptionOtherRegulations" type="dgt:DGConsignmentDescriptionOtherRegulations" minOccurs="0" maxOccurs="unbounded" />
@@ -1623,14 +1765,14 @@
   </xs:complexType>
   <xs:complexType name="DGTDocumentClass1">
     <xs:annotation>
-      <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives in article</xs:documentation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives for all substances and articles covered by the transport document</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="dgt:DGTDocument">
         <xs:sequence>
-          <xs:element name="explosiveContentNetMass" type="dgt:MassKilogram" minOccurs="1" maxOccurs="1">
+          <xs:element name="explosiveContentNetMassTotalDocument" type="dgt:MassKilogram" minOccurs="1" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives in article</xs:documentation>
+              <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives ADN/ADR/RID 5.4.1.2.1 (a) - Indicates quantity of explosives for all substances and articles covered by the transport document</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="dgClassificationFireworks" type="dgt:DGClassificationFireworks" minOccurs="0" />
@@ -1652,6 +1794,23 @@
             </xs:annotation>
           </xs:element>
           <xs:element name="_dgtDocumentClass7Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DGTDocumentCoolingConditioning">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.5.3.7 - Documentation</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="dgt:DGTDocument">
+        <xs:sequence>
+          <xs:element name="coolingConditioningType" type="dgt:_CoolingConditioningTypeEnum" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 5.5.3.7 - Documentation</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_dgtDocumentCoolingConditioningExtension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1762,7 +1921,7 @@
       </sequence>
     </sequence>
   </complexType>
-  <xs:complexType name="EmptyNonPackaging" abstract="true">
+  <xs:complexType name="EmptyNonPackaging">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.4.1.1.6.2.2 - Identify risks from fumes/residues</xs:documentation>
     </xs:annotation>
@@ -1775,7 +1934,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EmptyPackaging" abstract="true">
+  <xs:complexType name="EmptyPackaging">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.4.1.1.6.2.1 - Identify risks from fumes/residues</xs:documentation>
     </xs:annotation>
@@ -1871,7 +2030,7 @@
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="EmptyUncleaned" abstract="true">
+  <xs:complexType name="EmptyUncleaned">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.4.1.1.6.1 - Identify risks from fumes/residues</xs:documentation>
     </xs:annotation>
@@ -1897,6 +2056,11 @@
       <xs:enumeration value="emptyBatteryVehicle">
         <xs:annotation>
           <xs:documentation>ADN/ADR/RID 5.4.1.1.6.2.2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="emptyBatteryWagon">
+        <xs:annotation>
+          <xs:documentation>RID 5.4.1.1.6.2.2</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="emptyContainer">
@@ -1939,15 +2103,25 @@
           <xs:documentation>ADN/ADR/RID 5.4.1.1.6.2.2</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="emptyTankWagon">
+        <xs:annotation>
+          <xs:documentation>RID 5.4.1.1.6.2.2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="emptyVehicle">
         <xs:annotation>
           <xs:documentation>ADN/ADR/RID 5.4.1.1.6.2.2</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="emptyWagon">
+        <xs:annotation>
+          <xs:documentation>RID 5.4.1.1.6.2.2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="EmptyUncleanedContainments" abstract="true">
+  <xs:complexType name="EmptyUncleanedContainments">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.4.1.1.6 - Identify risks from fumes/residues</xs:documentation>
     </xs:annotation>
@@ -2277,19 +2451,19 @@
     </xs:sequence>
   </xs:complexType>
   <element name="MgmtData" type="xs:string" xmlns="http://www.w3.org/2001/XMLSchema" />
-  <xs:complexType name="NationalSP">
+  <xs:complexType name="NationalSPAndOther">
     <xs:annotation>
       <xs:documentation>Declaration of specific national special provosions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="dgt:DGSpecialProvision">
         <xs:sequence>
-          <xs:element name="nationalSP" type="com:MultilingualString" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="nationalSPAndOther" type="com:MultilingualString" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Declaration of specific national special provosions</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="_nationalSPExtension" type="com:_ExtensionType" minOccurs="0" />
+          <xs:element name="_nationalSPAndOtherExtension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2505,22 +2679,56 @@
       <xs:documentation>ADN/ADR 1.1.3.6 - Automatic calculation of the total maximum quantity per transport unit</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="totalQuantityPerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="1" maxOccurs="1">
+      <xs:element name="category1CalculatedValue1x1x3x6PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>ADN/ADR 1.1.3.6.3 - Automatic calculation of the total maximum quantity per transport unit</xs:documentation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the calculated result of Category 1 goods of the shipment according to the ADR 1.1.3.6</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="unitTotalQuantityPerTransportUnit" type="dgt:_UnitDGQuantityEnum" minOccurs="1" maxOccurs="1">
+      <xs:element name="category2CalculatedValue1x1x3x6PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>ADN/ADR 1.1.3.6.3 - Automatic calculation of the total maximum quantity per transport unit</xs:documentation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the calculated result of Category 2 goods of the shipment according to the ADR 1.1.3.6</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="totalQuantityPerCategoryPerTransportUnit" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="5">
+      <xs:element name="category3CalculatedValue1x1x3x6PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>ADR 5.1.1.1 (f)</xs:documentation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the calculated result of Category 2 goods of the shipment according to the ADR 1.1.3.6</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="dgtDocumentEntry" type="dgt:DGTDocumentEntry" maxOccurs="unbounded" />
+      <xs:element name="category4CalculatedValue1x1x3x6PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the calculated result of Category 4 goods of the shipment according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalCalculatedValue1x1x3x6PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the sum of all calculated value of goods of the shipment according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalQuantityPerCategory0PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the sum of all quantity of goods of the shipment which are from transport category 0 with out unit of measurement according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalQuantityPerCategory1PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the sum of all quantity of goods of the shipment which are from transport category 1 with out unit of measurement according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalQuantityPerCategory2PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the sum of all quantity of goods of the shipment which are from transport category 2 with out unit of measurement according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalQuantityPerCategory3PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the sum of all quantity of goods of the shipment which are from transport category 3 with out unit of measurement according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="totalQuantityPerCategory4PerShipment" type="dgt:NonNegativeDecimal" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>ADR 5.1.1.1 (f)  The value is the sum of all quantity of goods of the shipment which are from transport category 4 with out unit of measurement according to the ADR 1.1.3.6</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="_quantitiesPerShipmentExtension" type="com:_ExtensionType" minOccurs="0" />
     </xs:sequence>
   </xs:complexType>
@@ -2662,6 +2870,24 @@
       <element name="Exponent" type="dgt:CryptoBinary" />
     </sequence>
   </complexType>
+  <xs:simpleType name="SalvagePackingTypeEnum">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 5.4.1.1.5 - Special provisions for salvage packagings including large salvage packagings and salvage pressure</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="salvagePacking">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 4.1.1.19</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="salvagePressureReceptacle">
+        <xs:annotation>
+          <xs:documentation>ADN/ADR/RID 4.1.1.20</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="_extended" />
+    </xs:restriction>
+  </xs:simpleType>
   <element name="Signature" type="dgt:SignatureType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <element name="SignatureMethod" type="dgt:SignatureMethodType" xmlns="http://www.w3.org/2001/XMLSchema" />
   <complexType name="SignatureMethodType" mixed="true" xmlns="http://www.w3.org/2001/XMLSchema">
@@ -2712,6 +2938,23 @@
     </sequence>
     <attribute name="Id" type="ID" use="optional" />
   </complexType>
+  <xs:complexType name="SP250">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="chemicalWeaponsApproval" type="com:Url" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>ADN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="_sP250Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="SP290">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances</xs:documentation>
@@ -2802,6 +3045,18 @@
       <xs:extension base="dgt:DGSpecialProvision">
         <xs:sequence>
           <xs:element name="_sP373Extension" type="com:_ExtensionType" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SP375">
+    <xs:annotation>
+      <xs:documentation>ADN/ADR/RID 3.3 - Special provisions applicable to certain articles or substances</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="dgt:DGSpecialProvision">
+        <xs:sequence>
+          <xs:element name="_sP375Extension" type="com:_ExtensionType" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3355,6 +3610,24 @@
       <xs:enumeration value="_extended" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="UniqueCompanyIdentifier">
+    <xs:annotation>
+      <xs:documentation>unique identifiers for comanies</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="eORI" type="com:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Economic Operators Registration and Identification number according to Regulation (EC) No 648/2005</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="nationalCompanyIdentifier" type="com:String" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This is a unique identification number assigned to each company in a country.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="_uniqueCompanyIdentifierExtension" type="com:_ExtensionType" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:simpleType name="UnitDGQuantityEnum">
     <xs:annotation>
       <xs:documentation>ADN/ADR/RID 5.4.1.1.1 (f) - Indicate quantity of individual DGs</xs:documentation>
@@ -3500,16 +3773,6 @@
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="_extended" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="VehicleCountryCodeType">
-    <xs:annotation>
-      <xs:documentation>ADN/ADR/RID 5.4.1.2.1 (g) - Distinguishing sign of state of registration used on motor vehicles and trailers in international traffic</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:pattern value="([A-Z])*" />
-      <xs:minLength value="1" />
-      <xs:maxLength value="3" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="VehicleEventEnum">
