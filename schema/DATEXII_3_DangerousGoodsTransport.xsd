@@ -1218,7 +1218,7 @@
               <xs:documentation>ADN/ADR/RID 5.4.1.1.19</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="salvagePackage" type="dgt:_SalvagePackingTypeEnum" minOccurs="1" maxOccurs="1">
+          <xs:element name="salvagePackage" type="dgt:_SalvagePackingTypeEnum" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>ADN/ADR/RID 5.4.1.1.5 - Indicates a special packaging situation</xs:documentation>
             </xs:annotation>
